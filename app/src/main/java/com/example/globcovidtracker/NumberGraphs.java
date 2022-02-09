@@ -12,18 +12,22 @@ import android.widget.Button;
 
 import com.example.globcovidtracker.AllFragments.GlobDataFrag;
 import com.example.globcovidtracker.AllFragments.TodayDataFrag;
+import com.example.globcovidtracker.databinding.ActivityMainBinding;
+import com.example.globcovidtracker.databinding.ActivityNumberGraphsBinding;
 
 public class NumberGraphs extends AppCompatActivity {
 
-    Button blue,yellow;
+
+    private ActivityNumberGraphsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_number_graphs);
+        binding = ActivityNumberGraphsBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        blue=findViewById(R.id.button1);
-        yellow=findViewById(R.id.button2);
+
         Fragment frag1=new TodayDataFrag();
         Fragment frag2=new GlobDataFrag();
       //  getSupportActionBar().hide();
@@ -32,15 +36,15 @@ public class NumberGraphs extends AppCompatActivity {
                 .replace(R.id.vertical_layout, frag1)
                 .commit();
 
-        blue.setBackgroundColor(Color.BLUE);
-        blue.setTextColor(Color.WHITE);
-        blue.setOnClickListener(new View.OnClickListener() {
+        binding.button1.setBackgroundColor(Color.BLUE);
+        binding.button1.setTextColor(Color.WHITE);
+        binding.button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                yellow.setBackgroundColor(Color.WHITE);
-                blue.setBackgroundColor(Color.BLUE);
-                 blue.setTextColor(Color.WHITE);
-                 yellow.setTextColor(Color.BLACK);
+                binding.button2.setBackgroundColor(Color.WHITE);
+                binding.button1.setBackgroundColor(Color.BLUE);
+                 binding.button1.setTextColor(Color.WHITE);
+                 binding.button2.setTextColor(Color.BLACK);
                 FragmentManager fragmentManager=getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.vertical_layout,frag1);
@@ -48,13 +52,13 @@ public class NumberGraphs extends AppCompatActivity {
             }
         });
 
-        yellow.setOnClickListener(new View.OnClickListener() {
+        binding.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 blue.setBackgroundColor(Color.WHITE);
-                 yellow.setBackgroundColor(Color.BLUE);
-                blue.setTextColor(Color.BLACK);
-                yellow.setTextColor(Color.WHITE);
+                 binding.button1.setBackgroundColor(Color.WHITE);
+                 binding.button2.setBackgroundColor(Color.BLUE);
+                binding.button1.setTextColor(Color.BLACK);
+                binding.button2.setTextColor(Color.WHITE);
                 FragmentManager fragmentManager=getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.vertical_layout,frag2);
