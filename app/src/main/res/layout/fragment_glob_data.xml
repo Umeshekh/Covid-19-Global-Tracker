@@ -205,16 +205,16 @@
 
 
                     <TextView
+                        android:id="@+id/tvR"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:id="@+id/tvR"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        android:textColor="@color/color_one"
-                        android:textStyle="bold"
+                        android:layout_alignParentRight="true"
                         android:fontFamily="sans-serif-light"
-                        android:layout_alignParentRight="true"/>
+                        android:text="0"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/color_one"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
                 </RelativeLayout>
 
                 <!--View to display the line-->
@@ -242,16 +242,16 @@
 
 
                     <TextView
+                        android:id="@+id/tvPython"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:id="@+id/tvPython"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        android:textColor="@color/color_one"
-                        android:textStyle="bold"
+                        android:layout_alignParentRight="true"
                         android:fontFamily="sans-serif-light"
-                        android:layout_alignParentRight="true"/>
+                        android:text="0"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/color_one"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
                 <View

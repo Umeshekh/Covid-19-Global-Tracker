@@ -20,6 +20,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.globcovidtracker.MainActivity;
 import com.example.globcovidtracker.R;
+import com.example.globcovidtracker.databinding.FragmentTodayDataBinding;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
@@ -29,8 +30,9 @@ import org.json.JSONObject;
 
 public class TodayDataFrag extends Fragment {
 
-    TextView tvR, tvPython, tvCPP, tvJava;
+    TextView tvR, tvPython, tvCPP;
     PieChart pieChart;
+    private FragmentTodayDataBinding binding;
 
 
     public TodayDataFrag() {
@@ -38,13 +40,13 @@ public class TodayDataFrag extends Fragment {
     }
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        tvR = getView().findViewById(R.id.tvR);
-        tvPython = getView().findViewById(R.id.tvPython);
-        tvCPP = getView().findViewById(R.id.tvCPP);
-        tvJava = getView().findViewById(R.id.tvJava);
-        pieChart = getView().findViewById(R.id.piechart);
+        tvR = getView().findViewById(R.id.tvTodayCases);
+        tvPython = getView().findViewById(R.id.tvTodayDeathsCases);
+        tvCPP = getView().findViewById(R.id.tvTodayRecoveredCases);
 
+        pieChart = getView().findViewById(R.id.PiechartToday);
         setData();
+
     }
 
 
@@ -53,19 +55,14 @@ public class TodayDataFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_today_data, container, false);
+        FragmentTodayDataBinding binding = FragmentTodayDataBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+
 
     }
 
     private void setData() {
 
-        // Set the percentage of language used
-      //  tvR.setText(Integer.toString(40));
-//        tvPython.setText(Integer.toString(30));
-//        tvCPP.setText(Integer.toString(5));
-//        tvJava.setText(Integer.toString(25));
-
-        // Set the data and color to the pie chart
 
 
 
@@ -81,8 +78,6 @@ public class TodayDataFrag extends Fragment {
                     public void onResponse(String response)
                     {
 
-                        // Handle the JSON object and
-                        // handle it inside try and catch
                         try {
 
                             // Creating object of JSONObject
@@ -90,16 +85,11 @@ public class TodayDataFrag extends Fragment {
                                     = new JSONObject(
                                     response.toString());
 
-                            // Set the data in text view
-                            // which are available in JSON format
-                            // Note that the parameter inside
-                            // the getString() must match
-                            // with the name given in JSON format
-                            tvR.setText(jsonObject.getString("cases"));
-                            tvCPP.setText(jsonObject.getString("cases"));
+                            tvR.setText(jsonObject.getString("todayCases"));
+                          // tvPython.setText(jsonObject.getString("todayDeaths"));
+                            tvPython.setText("12345");
+                          tvCPP.setText(jsonObject.getString("todayRecovered"));
 
-                            tvJava.setText(jsonObject.getString("recovered"));
-                            tvPython.setText(jsonObject.getString("recovered"));
 
                             pieChart.addPieSlice(
                                     new PieModel(
@@ -116,11 +106,7 @@ public class TodayDataFrag extends Fragment {
                                             "C++",
                                             Integer.parseInt(tvCPP.getText().toString()),
                                             Color.parseColor("#EF5350")));
-                            pieChart.addPieSlice(
-                                    new PieModel(
-                                            "Java",
-                                            Integer.parseInt(tvJava.getText().toString()),
-                                            Color.parseColor("#29B6F6")));
+
 
 
 
@@ -143,7 +129,7 @@ public class TodayDataFrag extends Fragment {
         requestQueue.add(request);
 
         // To animate the pie chart
-       pieChart.startAnimation();
+        pieChart.startAnimation();
 
     }
 }
