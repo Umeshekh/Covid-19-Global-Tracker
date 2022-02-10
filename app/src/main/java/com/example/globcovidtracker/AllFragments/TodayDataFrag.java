@@ -55,7 +55,7 @@ public class TodayDataFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        FragmentTodayDataBinding binding = FragmentTodayDataBinding.inflate(inflater, container, false);
+       binding = FragmentTodayDataBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
 

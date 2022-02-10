@@ -40,24 +40,15 @@
                 android:orientation="horizontal">
 
 
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-
-                    android:layout_gravity="left"
-                    android:layout_marginRight="250dp" />
-
-
                 <TextView
                     android:id="@+id/view_all1"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_marginRight="15dp"
+
                     android:fontFamily="sans-serif-smallcaps"
                     android:text="View all"
+                    android:textAlignment="viewEnd"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -272,10 +263,8 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:layout_marginLeft="15dp"
-
                    android:layout_weight="1"
                    android:fontFamily="@font/acme"
-
                    android:text="Symptoms /Exercise"
                    android:textColor="@android:color/black"
                    android:textSize="20sp" />
@@ -285,7 +274,6 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_marginRight="15dp"
-
                    android:fontFamily="sans-serif-smallcaps"
                    android:text="View all"
                    android:textSize="15sp" />
@@ -345,10 +333,9 @@
                            android:layout_height="wrap_content"
                            android:layout_marginLeft="10dp"
                            android:layout_marginTop="10dp"
-
                            android:paddingLeft="20dp"
                            android:paddingRight="20dp"
-                           android:text="More Info"
+                           android:text="Book Slot"
                            android:textAllCaps="false"
                            android:textColor="@color/white"
                            android:textSize="14sp" />
@@ -386,9 +373,8 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_marginRight="15dp"
-
+                   android:fontFamily="sans-serif-smallcaps"
                    android:text="View all"
-                   android:textColor="@color/black"
                    android:textSize="15sp" />
 
            </LinearLayout>

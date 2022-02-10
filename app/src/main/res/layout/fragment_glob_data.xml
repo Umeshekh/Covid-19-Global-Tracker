@@ -37,7 +37,7 @@
 
                 <org.eazegraph.lib.charts.PieChart
                     xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/piechart"
+                    android:id="@+id/pieChartGlobal"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:padding="6dp"
@@ -72,7 +72,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="R"
+                            android:text="Confirmed"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
@@ -94,7 +94,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Python"
+                            android:text="Active"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
@@ -116,7 +116,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="C++"
+                            android:text="Deaths"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
@@ -132,13 +132,13 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:background="@color/Java"/>
+                            android:background="@color/blue"/>
 
                         <!--Text view to display Java text -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Java"
+                            android:text="Recovered"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
@@ -200,12 +200,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="R"
+                        android:text="Confirmed"
                         android:textSize="18sp"/>
 
 
                     <TextView
-                        android:id="@+id/tvR"
+                        android:id="@+id/tvConfirmed"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -237,12 +237,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Python"
+                        android:text="Active"
                         android:textSize="18sp"/>
 
 
                     <TextView
-                        android:id="@+id/tvPython"
+                        android:id="@+id/tvActiveCases"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -273,21 +273,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="C++"
+                        android:text="Deaths"
                         android:textSize="18sp"/>
 
 
                     <TextView
+                        android:id="@+id/tvDeaths"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:id="@+id/tvCPP"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        android:textColor="@color/color_one"
-                        android:textStyle="bold"
+                        android:layout_alignParentRight="true"
                         android:fontFamily="sans-serif-light"
-                        android:layout_alignParentRight="true"/>
+                        android:text="0"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/color_one"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
                 <View
@@ -309,21 +309,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Java"
+                        android:text="Recovered"
                         android:textSize="18sp"/>
 
 
                     <TextView
+                        android:id="@+id/tvRecoveredCases"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:id="@+id/tvJava"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        android:textColor="@color/color_one"
-                        android:textStyle="bold"
+                        android:layout_alignParentRight="true"
                         android:fontFamily="sans-serif-light"
-                        android:layout_alignParentRight="true"/>
+                        android:text="0"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/color_one"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
