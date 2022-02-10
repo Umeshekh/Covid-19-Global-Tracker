@@ -78,19 +78,18 @@ public class MainActivity extends AppCompatActivity {
         symName=findViewById(R.id.txtSymptoms);
         symDes=findViewById(R.id.SymDetail);
         sysImg=findViewById(R.id.sys_image);
-        tvViewAll1=findViewById(R.id.view_all1);
         knowMore=findViewById(R.id.btnKnowMore);
 
         webView = new WebView(getApplicationContext());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
 
-        knowMore.setOnClickListener(new View.OnClickListener() {
+        binding.btnKnowMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                // webView.loadUrl("https://www.ssaurel.com/blog");
-                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.ssaurel.com/blog"));
+                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cowin.gov.in/"));
                 startActivity(intent);
               //  setContentView(webView);
 
@@ -122,7 +121,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView3.setAdapter(precautionsAdapter);
         recyclerView3.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false  ));
 
-         tvViewAll1.setOnClickListener(new View.OnClickListener() {
+
+
+         binding.viewAll1.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
                  Intent intent=new Intent(MainActivity.this,NumberGraphs.class);
@@ -168,11 +169,7 @@ public class MainActivity extends AppCompatActivity {
                                     = new JSONObject(
                                     response.toString());
 
-                            // Set the data in text view
-                            // which are available in JSON format
-                            // Note that the parameter inside
-                            // the getString() must match
-                            // with the name given in JSON format
+
                             tvCases.setText(jsonObject.getString("cases"));
                             tvConfirmed.setText(jsonObject.getString("cases"));
 
