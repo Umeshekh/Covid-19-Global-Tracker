@@ -6,7 +6,12 @@
         <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/activity_main.xml" value="0.3259853039412158" />
         <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/activity_number_graphs.xml" value="0.25416666666666665" />
+        <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/activity_precautions.xml" value="0.25416666666666665" />
+        <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/activity_symp_and_preca.xml" value="0.25416666666666665" />
+        <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/activity_symtoms.xml" value="0.25416666666666665" />
         <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/fragment_glob_data.xml" value="0.25416666666666665" />
+        <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/fragment_precautions.xml" value="0.25416666666666665" />
+        <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/fragment_symtoms.xml" value="0.24010416666666667" />
         <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/fragment_today_data.xml" value="0.25416666666666665" />
         <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/item_numbers.xml" value="0.25416666666666665" />
         <entry key="..\:/A Projects/GlobCovidTracker/app/src/main/res/layout/item_precautions.xml" value="0.25416666666666665" />

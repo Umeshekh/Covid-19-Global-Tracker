@@ -13,6 +13,12 @@
         android:theme="@style/Theme.GlobCovidTracker"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity_symtoms"
+            android:exported="false" />
+        <activity
+            android:name=".activity_precautions"
+            android:exported="false" />
+        <activity
             android:name=".NumberGraphs"
             android:exported="false" />
         <activity
