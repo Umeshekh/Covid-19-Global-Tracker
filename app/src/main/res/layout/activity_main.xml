@@ -32,6 +32,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="@color/black"
+        android:fontFamily="@font/gilroy_bold"
         android:textSize="20sp"
        />
             <LinearLayout
@@ -46,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
 
-                    android:fontFamily="sans-serif-smallcaps"
+                    android:fontFamily="@font/gilroy_light"
                     android:text="View all"
                     android:textAlignment="viewEnd"
                     android:textSize="15sp" />
@@ -84,8 +85,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
-
                             android:text="Confirmed"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gilroy_light"
                             android:textAlignment="center"
 
                             android:textSize="20sp" />
@@ -96,8 +98,8 @@
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
                             android:text="4621684"
+                            android:fontFamily="@font/gilroy_bold"
                             android:textAlignment="center"
 
                             android:textSize="20sp" />
@@ -135,8 +137,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-
+                        android:textColor="@color/black"
                         android:text="Acive"
+                        android:fontFamily="@font/gilroy_light"
                         android:textAlignment="center"
 
                         android:textSize="20sp" />
@@ -146,8 +149,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
-
                         android:text="4621684"
+                        android:textColor="@color/orange"
+                        android:fontFamily="@font/gilroy_bold"
                         android:textAlignment="center"
 
                         android:textSize="20sp"
@@ -178,9 +182,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-
+                        android:textColor="@color/black"
                         android:text="Recovered"
                         android:textAlignment="center"
+                        android:fontFamily="@font/gilroy_light"
 
                         android:textSize="20sp" />
 
@@ -189,10 +194,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
-
+                        android:fontFamily="@font/gilroy_bold"
                         android:text="4621684"
                         android:textAlignment="center"
-
+                        android:textColor="@color/green"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -219,7 +224,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-
+                        android:fontFamily="@font/gilroy_light"
+                        android:textColor="@color/black"
                         android:text="Death"
                         android:textAlignment="center"
 
@@ -230,10 +236,10 @@
                         android:id="@+id/Death_cases_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
+                        android:fontFamily="@font/gilroy_bold"
+                        android:textColor="@color/red"
                         android:text="4621684"
                         android:textAlignment="center"
-
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -255,8 +261,8 @@
                    android:layout_height="wrap_content"
                    android:layout_marginLeft="15dp"
                    android:layout_weight="1"
-                   android:fontFamily="@font/acme"
-                   android:text="Symptoms /Exercise"
+                   android:fontFamily="@font/gilroy_bold"
+                   android:text="Symptoms"
                    android:textColor="@android:color/black"
                    android:textSize="20sp" />
 
@@ -265,7 +271,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_marginRight="15dp"
-                   android:fontFamily="sans-serif-smallcaps"
+                   android:fontFamily="@font/gilroy_light"
                    android:text="View all"
                    android:textSize="15sp" />
 
@@ -313,19 +319,21 @@
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
                            android:layout_marginLeft="10dp"
-
+                           android:fontFamily="@font/gilroy_bold"
                            android:text="Click Here to Book your vaccination slot"
                            android:textColor="@color/white"
                            android:textSize="15sp" />
 
                        <Button
                            android:id="@+id/btnKnowMore"
+                           android:backgroundTint="@color/colorPrimaryDark"
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
                            android:layout_marginLeft="10dp"
                            android:layout_marginTop="10dp"
                            android:paddingLeft="20dp"
                            android:paddingRight="20dp"
+                           android:fontFamily="@font/gilroy_light"
                            android:text="Book Slot"
                            android:textAllCaps="false"
                            android:textColor="@color/white"
@@ -353,7 +361,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:layout_marginLeft="15dp"
-
+                   android:fontFamily="@font/gilroy_bold"
                    android:text="Precautions"
                    android:layout_weight="1"
                    android:textColor="@color/black"
@@ -364,7 +372,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_marginRight="15dp"
-                   android:fontFamily="sans-serif-smallcaps"
+                   android:fontFamily="@font/gilroy_light"
                    android:text="View all"
                    android:textSize="15sp" />
 
@@ -379,6 +387,84 @@
                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                tools:itemCount="6"
                tools:listitem="@layout/item_symtoms" />
+
+
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="10dp"
+               android:padding="10dp"
+               app:cardCornerRadius="5dp"
+               app:cardElevation="5dp">
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="10dp"
+                   android:layout_marginRight="10dp"
+                   android:layout_weight="1"
+                   android:orientation="vertical"
+                   android:padding="10dp">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginBottom="10dp"
+                       android:fontFamily="@font/gilroy_bold"
+                       android:text="Made by Umesh Ekhande"
+                       android:textAlignment="center"
+                       android:textColor="@color/black"
+                       android:textSize="15sp" />
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+
+                       android:orientation="horizontal">
+                       <ImageView
+                           android:layout_width="0dp"
+                           android:layout_height="120dp"
+                           android:src="@drawable/myphoto"
+                           android:layout_weight="1"/>
+                       <LinearLayout
+                           android:layout_width="0dp"
+                           android:layout_height="match_parent"
+                           android:orientation="vertical"
+                           android:layout_weight="1">
+
+
+                       <ImageButton
+                           android:id="@+id/btnWebsite"
+                           android:layout_width="40dp"
+                           android:layout_height="40dp"
+                          android:src="@drawable/website"
+                           android:textAllCaps="false"
+                           android:textSize="10sp" />
+
+                       <ImageButton
+                           android:id="@+id/btnGithub"
+                           android:layout_width="40dp"
+                           android:layout_height="40dp"
+                           android:src="@drawable/github"
+                           android:textAllCaps="false"
+                           android:textSize="10sp" />
+
+                       <ImageButton
+                           android:id="@+id/btnLinkedIn"
+                           android:layout_width="40dp"
+                           android:layout_height="40dp"
+                           android:src="@drawable/linkedin"
+                           android:textAllCaps="false"
+                           android:textSize="10sp" />
+                   </LinearLayout>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+
+           </androidx.cardview.widget.CardView>
 
 
 

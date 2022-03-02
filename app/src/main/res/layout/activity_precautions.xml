@@ -13,6 +13,7 @@
         android:layout_margin="15dp"
         android:gravity="center"
         android:text="Precautions"
+        android:fontFamily="@font/gilroy_bold"
         android:layout_above="@id/recyclerView"
         android:textColor="@color/black"
         android:textSize="20sp" />

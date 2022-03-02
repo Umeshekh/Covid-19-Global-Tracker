@@ -36,11 +36,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-
-
-    SymtomsAdapter symtomsAdapter;
+    private SymtomsAdapter symtomsAdapter;
     private WebView webView;
-
+    private PrecautionsAdapter precautionsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,74 +47,57 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-
-
         webView = new WebView(getApplicationContext());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
 
-        binding.btnKnowMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-               // webView.loadUrl("https://www.ssaurel.com/blog");
-                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cowin.gov.in/"));
-                startActivity(intent);
-              //  setContentView(webView);
-            }
+        binding.viewAll1.setOnClickListener(view14 -> {
+            Intent intent = new Intent(MainActivity.this, NumberGraphs.class);
+            startActivity(intent);
         });
 
-        featchData();
+        fetchData();
 
-        binding.txtViewPrecautions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String value="sym";
-                Intent i = new Intent(MainActivity.this, activity_precautions.class);
-                i.putExtra("key",value);
-                startActivity(i);
-            }
+        binding.txtViewSymptoms.setOnClickListener(view13 -> {
+            Intent i = new Intent(MainActivity.this, activity_symtoms.class);
+            startActivity(i);
         });
 
-        binding.txtViewSymptoms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String value="sym";
-                Intent i = new Intent(MainActivity.this, activity_symtoms.class);
-                i.putExtra("key",value);
-                startActivity(i);
-            }
+        binding.txtViewPrecautions.setOnClickListener(view12 -> {
+            Intent i = new Intent(MainActivity.this, activity_precautions.class);
+            startActivity(i);
+        });
+
+        binding.btnKnowMore.setOnClickListener(view1 -> {
+            loadURL("https://www.cowin.gov.in/");
+        });
+
+        binding.btnWebsite.setOnClickListener(view1 -> {
+            loadURL("https://umeshekh.github.io/");
+        });
+
+        binding.btnGithub.setOnClickListener(view1 -> {
+            loadURL("https://github.com/Umeshekh/");
+        });
+
+        binding.btnLinkedIn.setOnClickListener(view1 -> {
+            loadURL("https://www.linkedin.com/in/umesh-ekhande-87535a191/");
         });
 
 
         List<model> symList = getSymList();
-       RecyclerView recyclerView2=findViewById(R.id.recyclerView2);
-       symtomsAdapter = new SymtomsAdapter(symList,getApplication());
-       recyclerView2.setAdapter(symtomsAdapter);
-       recyclerView2.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false));
+        RecyclerView recyclerView2 = findViewById(R.id.recyclerView2);
+        symtomsAdapter = new SymtomsAdapter(symList, getApplication());
+        recyclerView2.setAdapter(symtomsAdapter);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
 
-       List<model> list2 = new ArrayList<>();
-       list2 = getData2();
-       RecyclerView recyclerView3=findViewById(R.id.recyclerViewPrecautions);
-       PrecautionsAdapter precautionsAdapter = new PrecautionsAdapter(list2,getApplication());
-       recyclerView3.setAdapter(precautionsAdapter);
-       recyclerView3.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false  ));
-
-
-
-         binding.viewAll1.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent=new Intent(MainActivity.this,NumberGraphs.class);
-                 startActivity(intent);
-             }
-         });
-
+        List<model> list2 = getData2();
+        RecyclerView recyclerView3 = findViewById(R.id.recyclerViewPrecautions);
+        precautionsAdapter = new PrecautionsAdapter(list2, getApplication());
+        recyclerView3.setAdapter(precautionsAdapter);
+        recyclerView3.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
 
     }
-
-
-
 
 
     private List<model> getSymList() {
@@ -142,14 +123,20 @@ public class MainActivity extends AppCompatActivity {
 
     private List<model> getData2() {
         List<model> myList = new ArrayList<>();
-        myList.add(new model( R.drawable.cough,"Dry Cough","I have Dry Cough"));
-        myList.add(new model( R.drawable.cough,"Dry Cough1","I have Dry Cough"));
-        myList.add(new model( R.drawable.cough,"Dry Cough2","I have Dry Cough"));
+        myList.add(new model(R.drawable.vaccine,
+                "Get Vaccinated",
+                "Get vaccinated and protect yourself and others from corona"));
+        myList.add(new model(R.drawable.handwash,
+                "Hand Wash",
+                " Wash your hands well and often. Use hand sanitizer when you’re not near soap and water."));
+        myList.add(new model(R.drawable.mask,
+                "Wear Mask",
+                "Masks are a key measure to suppress transmission and save lives."));
         return myList;
 
     }
 
-    private void featchData() {
+    private void fetchData() {
 
         String url = "https://corona.lmao.ninja/v2/all/";
 
@@ -157,32 +144,19 @@ public class MainActivity extends AppCompatActivity {
                 = new StringRequest(
                 Request.Method.GET,
                 url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response)
-                    {
+                response -> {
+                    try {
 
-                        // Handle the JSON object and
-                        // handle it inside try and catch
-                        try {
-
-                            // Creating object of JSONObject
-                            JSONObject jsonObject
-                                    = new JSONObject(
-                                    response.toString());
-
-
-                            binding.confirmedCasesId.setText(jsonObject.getString("cases"));
-                            binding.RecoveredCasesId.setText(jsonObject.getString("recovered"));
-                            binding.ActiveCasesId.setText(jsonObject.getString("active"));
-                            binding.DeathCasesId.setText(jsonObject.getString("deaths"));
-
-
-
-                        }
-                        catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        // Creating object of JSONObject
+                        JSONObject jsonObject
+                                = new JSONObject(
+                                response.toString());
+                        binding.confirmedCasesId.setText(jsonObject.getString("cases"));
+                        binding.RecoveredCasesId.setText(jsonObject.getString("recovered"));
+                        binding.ActiveCasesId.setText(jsonObject.getString("active"));
+                        binding.DeathCasesId.setText(jsonObject.getString("deaths"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
                 error -> Toast.makeText(
@@ -194,5 +168,11 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue
                 = Volley.newRequestQueue(this);
         requestQueue.add(request);
+    }
+
+
+    private void loadURL(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
     }
 }

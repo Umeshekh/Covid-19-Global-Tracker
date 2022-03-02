@@ -30,6 +30,7 @@ import org.json.JSONObject;
 
 public class TodayDataFrag extends Fragment {
 
+
     TextView tvR, tvPython, tvCPP;
     PieChart pieChart;
     private FragmentTodayDataBinding binding;
@@ -52,20 +53,15 @@ public class TodayDataFrag extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-       binding = FragmentTodayDataBinding.inflate(inflater, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        binding = FragmentTodayDataBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
 
     }
 
     private void setData() {
-
-
-
-
 
         String url = "https://corona.lmao.ninja/v2/all/";
 

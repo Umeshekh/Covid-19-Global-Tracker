@@ -19,6 +19,9 @@ import java.util.List;
 public class activity_symtoms extends AppCompatActivity {
 
     private ActivitySymtomsBinding binding;
+    private List<model> list1;
+    private RecyclerView recyclerView;
+    private SymtomsAdapter symtomsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +30,10 @@ public class activity_symtoms extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        List<model> list1=new ArrayList<>();
-        list1=getData();
-        RecyclerView recyclerView=findViewById(R.id.recyclerView);
-        SymtomsAdapter precautionsAdapter = new SymtomsAdapter(list1,getApplication());
-        recyclerView.setAdapter(precautionsAdapter);
+        list1 = getData();
+        recyclerView=findViewById(R.id.recyclerView);
+        symtomsAdapter = new SymtomsAdapter(list1,getApplication());
+        recyclerView.setAdapter(symtomsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false  ));
     }
 

@@ -35,11 +35,8 @@ public class GlobDataFrag extends Fragment {
     }
 
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentGlobDataBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -59,65 +56,46 @@ public class GlobDataFrag extends Fragment {
                 = new StringRequest(
                 Request.Method.GET,
                 url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response)
-                    {
+                response -> {
 
-                        try {
-
-                            // Creating object of JSONObject
-                            JSONObject jsonObject
-                                    = new JSONObject(
-                                    response.toString());
-
-                            binding.tvConfirmed.setText(jsonObject.getString("cases"));
-                         binding.tvActiveCases.setText(jsonObject.getString("active"));
-                         binding.tvDeaths.setText(jsonObject.getString("deaths"));
-                         binding.tvRecoveredCases.setText(jsonObject.getString("recovered"));
+                    try {
+                        // Creating object of JSONObject
+                        JSONObject jsonObject
+                                = new JSONObject(
+                                response.toString());
+                        binding.tvConfirmed.setText(jsonObject.getString("cases"));
+                        binding.tvActiveCases.setText(jsonObject.getString("active"));
+                        binding.tvDeaths.setText(jsonObject.getString("deaths"));
+                        binding.tvRecoveredCases.setText(jsonObject.getString("recovered"));
 
 
+                        binding.pieChartGlobal.addPieSlice(
+                                new PieModel(
+                                        "R",
+                                        Integer.parseInt(binding.tvConfirmed.getText().toString()),
+                                        Color.parseColor("#FFA726")));
+                        binding.pieChartGlobal.addPieSlice(
+                                new PieModel(
+                                        "Python",
+                                        Integer.parseInt(binding.tvActiveCases.getText().toString()),
+                                        Color.parseColor("#66BB6A")));
+                        binding.pieChartGlobal.addPieSlice(
+                                new PieModel(
+                                        "C++",
+                                        Integer.parseInt(binding.tvDeaths.getText().toString()),
+                                        Color.parseColor("#EF5350")));
 
+                        binding.pieChartGlobal.addPieSlice(
+                                new PieModel(
+                                        "Python",
+                                        Integer.parseInt(binding.tvRecoveredCases.getText().toString()),
+                                        Color.parseColor("#29B6F6")));
 
-                            binding.pieChartGlobal.addPieSlice(
-                                    new PieModel(
-                                            "R",
-                                            Integer.parseInt(binding.tvConfirmed.getText().toString()),
-                                            Color.parseColor("#FFA726")));
-                            binding.pieChartGlobal.addPieSlice(
-                                    new PieModel(
-                                            "Python",
-                                            Integer.parseInt(binding.tvActiveCases.getText().toString()),
-                                            Color.parseColor("#66BB6A")));
-                            binding.pieChartGlobal.addPieSlice(
-                                    new PieModel(
-                                            "C++",
-                                            Integer.parseInt(binding.tvDeaths.getText().toString()),
-                                            Color.parseColor("#EF5350")));
-
-                            binding.pieChartGlobal.addPieSlice(
-                                    new PieModel(
-                                            "Python",
-                                            Integer.parseInt(binding.tvRecoveredCases.getText().toString()),
-                                            Color.parseColor("#29B6F6")));
-
-
-
-
-
-                        }
-                        catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error)
-                    {
-                        Toast.makeText(getActivity(),error.getMessage(),Toast.LENGTH_SHORT).show();
-                    }
-                });
+                error -> Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show());
 
         RequestQueue requestQueue
                 = Volley.newRequestQueue(getContext());

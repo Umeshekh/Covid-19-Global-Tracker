@@ -66,13 +66,14 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:background="@color/R"/>
+                            android:background="@color/orange"/>
 
                         <!--Text view to display R -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Confirmed"
+                            android:fontFamily="@font/gilroy_light"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
@@ -88,13 +89,14 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:background="@color/Python"/>
+                            android:background="@color/green"/>
 
                         <!--Text view to display python text -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Active"
+                            android:fontFamily="@font/gilroy_light"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
@@ -110,13 +112,14 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:background="@color/CPP"/>
+                            android:background="@color/red"/>
 
                         <!--Text view to display C++ text -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Deaths"
+                            android:fontFamily="@font/gilroy_light"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
@@ -139,6 +142,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Recovered"
+                            android:fontFamily="@font/gilroy_light"
                             android:paddingLeft="10dp"/>
 
                     </LinearLayout>
@@ -175,6 +179,7 @@
                     android:text="Use of Programming Languages(In Percentage):"
                     android:textSize="23sp"
                     android:textStyle="bold"
+                    android:fontFamily="@font/gilroy_bold"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="20dp"/>
 
@@ -209,7 +214,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:fontFamily="sans-serif-light"
+                        android:fontFamily="@font/gilroy_light"
                         android:text="0"
                         android:textAlignment="textEnd"
                         android:textColor="@color/color_one"
@@ -246,7 +251,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:fontFamily="sans-serif-light"
+                        android:fontFamily="@font/gilroy_light"
                         android:text="0"
                         android:textAlignment="textEnd"
                         android:textColor="@color/color_one"
@@ -282,7 +287,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:fontFamily="sans-serif-light"
+                        android:fontFamily="@font/gilroy_light"
                         android:text="0"
                         android:textAlignment="textEnd"
                         android:textColor="@color/color_one"
@@ -318,7 +323,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:fontFamily="sans-serif-light"
+                        android:fontFamily="@font/gilroy_light"
                         android:text="0"
                         android:textAlignment="textEnd"
                         android:textColor="@color/color_one"
