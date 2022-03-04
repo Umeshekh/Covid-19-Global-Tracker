@@ -6,7 +6,7 @@
 <p> It uses Volley library to bring the data into app </p>
 
 ### Dependencies 
-* Material Design
+* [Material Design](https://www.google.com)
 * Volley
   
 ### Requirements to contribute
