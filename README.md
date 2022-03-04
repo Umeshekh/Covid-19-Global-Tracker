@@ -6,6 +6,6 @@
 <p> It uses Volley library to bring the data into app </p>
 
 <h2> Dependencies </h2>
--Material Design
--Volley
+- Material Design
+- Volley
 
