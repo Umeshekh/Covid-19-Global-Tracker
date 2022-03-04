@@ -10,4 +10,11 @@
 * Material Design <br>
 * Volley
   </p>
+  
+  Requirements to contribute
+* Basic knowledge of programming is mandatory
+* The ability to use Git and GitHub
+* Some knowledge of Kotlin and how to use Android Studio is preferrable for a head start.
+* UI/UX Design skills are appreciable but not mandatory
+* Some idea about API or willingness to learn it
 
