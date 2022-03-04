@@ -6,8 +6,8 @@
 <p> It uses Volley library to bring the data into app </p>
 
 ### Dependencies 
-* [Material Design](https://www.google.com)
-* Volley
+* [Material Design](https://github.com/material-components/material-components-android)
+* [volley](https://github.com/google/volley)
   
 ### Requirements to contribute
 * Basic knowledge of programming is mandatory
