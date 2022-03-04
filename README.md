@@ -16,3 +16,6 @@
 * UI/UX Design skills are appreciable but not mandatory
 * Some idea about API or willingness to learn it
 
+### MIT License
+Copyright (c) 2022 umesh ekhande
+
