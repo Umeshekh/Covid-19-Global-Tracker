@@ -5,11 +5,11 @@
 <p> This is java based global covid number showing app </p>
 <p> It uses Volley library to bring the data into app </p>
 
-#h2 Dependencies 
+# H2 Dependencies 
 * Material Design
 * Volley
   
-#h2 Requirements to contribute
+# h2 Requirements to contribute
 * Basic knowledge of programming is mandatory
 * The ability to use Git and GitHub
 * Some knowledge of Kotlin and how to use Android Studio is preferrable for a head start.
