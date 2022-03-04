@@ -7,7 +7,7 @@
 
 <h2> Dependencies </h2>
 <p>
-- Material Design
-- Volley
+* Material Design <br>
+* Volley
   </p>
 
