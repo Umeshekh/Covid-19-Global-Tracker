@@ -421,25 +421,18 @@
                    <LinearLayout
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                      >
 
-                       android:orientation="horizontal">
-                       <ImageView
-                           android:layout_width="0dp"
-                           android:layout_height="120dp"
-                           android:src="@drawable/myphoto"
-                           android:layout_weight="1"/>
-                       <LinearLayout
-                           android:layout_width="0dp"
-                           android:layout_height="match_parent"
-                           android:orientation="vertical"
-                           android:layout_weight="1">
 
 
                        <ImageButton
                            android:id="@+id/btnWebsite"
                            android:layout_width="40dp"
                            android:layout_height="40dp"
+                           android:layout_weight="1"
                           android:src="@drawable/website"
+                           android:background="@color/white"
                            android:textAllCaps="false"
                            android:textSize="10sp" />
 
@@ -447,6 +440,8 @@
                            android:id="@+id/btnGithub"
                            android:layout_width="40dp"
                            android:layout_height="40dp"
+                           android:background="@color/white"
+                           android:layout_weight="1"
                            android:src="@drawable/github"
                            android:textAllCaps="false"
                            android:textSize="10sp" />
@@ -455,10 +450,12 @@
                            android:id="@+id/btnLinkedIn"
                            android:layout_width="40dp"
                            android:layout_height="40dp"
+                           android:layout_weight="1"
+                           android:background="@color/white"
                            android:src="@drawable/linkedin"
                            android:textAllCaps="false"
                            android:textSize="10sp" />
-                   </LinearLayout>
+
                    </LinearLayout>
 
                </LinearLayout>

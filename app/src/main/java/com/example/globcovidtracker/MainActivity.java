@@ -148,9 +148,8 @@ public class MainActivity extends AppCompatActivity {
                     try {
 
                         // Creating object of JSONObject
-                        JSONObject jsonObject
-                                = new JSONObject(
-                                response.toString());
+                        JSONObject jsonObject = new JSONObject(response.toString());
+
                         binding.confirmedCasesId.setText(jsonObject.getString("cases"));
                         binding.RecoveredCasesId.setText(jsonObject.getString("recovered"));
                         binding.ActiveCasesId.setText(jsonObject.getString("active"));
@@ -165,8 +164,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT)
                         .show());
 
-        RequestQueue requestQueue
-                = Volley.newRequestQueue(this);
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
     }
 

@@ -37,14 +37,15 @@ public class NumberGraphs extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.vertical_layout, frag1)
                 .commit();
-
-        binding.button1.setBackgroundColor(Color.BLUE);
-        binding.button1.setTextColor(Color.WHITE);
+        int myColor = getResources().getColor(R.color.colorPrimary);
+        int white = getResources().getColor(R.color.white);
+        binding.button1.setBackgroundColor(myColor);
+        binding.button1.setTextColor(white);
         binding.button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.button2.setBackgroundColor(Color.WHITE);
-                binding.button1.setBackgroundColor(Color.BLUE);
+                binding.button2.setBackgroundColor(white);
+                binding.button1.setBackgroundColor(myColor);
                 binding.button1.setTextColor(Color.WHITE);
                 binding.button2.setTextColor(Color.BLACK);
                 FragmentManager fragmentManager = getSupportFragmentManager();
@@ -58,7 +59,7 @@ public class NumberGraphs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 binding.button1.setBackgroundColor(Color.WHITE);
-                binding.button2.setBackgroundColor(Color.BLUE);
+                binding.button2.setBackgroundColor(myColor);
                 binding.button1.setTextColor(Color.BLACK);
                 binding.button2.setTextColor(Color.WHITE);
                 FragmentManager fragmentManager = getSupportFragmentManager();

@@ -154,7 +154,7 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/gilroy_bold"
-                    android:text="Use of Programming Languages(In Percentage):"
+                    android:text="Number of patients:"
                     android:textSize="23sp" />
 
                 <!--View to display the line-->
